@@ -8,41 +8,77 @@
 
 import Foundation
 
-func addDigits(_ num:Int) -> Int {
-    guard num >= 0 else {
-        return -1
+class TreeNode {
+    var val:Int
+    var left:TreeNode?
+    var right:TreeNode?
+    init(_ val:Int) {
+        self.val = val
     }
-    
-    if num < 10 {
-        return num
-    }
-    
-    func recursionAdd(_ a:Int) -> Int {
-        var temp = a
-        while temp >= 10 {
-            let str = String(temp)
-            temp = str.reduce(0) { (intial, element)  in
-                intial + (Int(String(element)) ?? 0)
-            }
-        }
-        return temp
-    }
-    
- return recursionAdd(num)
 }
-let a = addDigits(999999999)
 
+/*
+            1
+        2          3
+    4      5     6     7
+ 8    9  10  11
+ 
+ */
 
-func addDigits2(_ a:Int) -> Int {
-    guard a > 0 else {
+var nodes:[TreeNode] = []
+
+for value in 1...11 {//用来生成节点
+    let node = TreeNode(value)
+    nodes.append(node)
+}
+
+var idx = 0
+while (idx + 1) * 2 <= 10 {//将数组中node链接起来
+    let node = nodes[idx]
+    let left = nodes[(idx + 1) * 2 - 1]
+    let right = nodes[(idx + 1) * 2]
+    node.left = left
+    node.right = right
+    idx += 1
+}
+
+let root = nodes[0]
+//计算树的最大深度？？？？ 这个是层？？
+func maxDepth(_ root:TreeNode?) -> Int {
+    guard let root = root else {
         return 0
     }
-    
-    if a % 9 == 0 {
-        return 9
-    }else{
-        return a % 9
-    }
-    
+    return max(maxDepth(root.left), maxDepth(root.right)) + 1
 }
-print(addDigits(9887779))
+print(maxDepth(nodes[0]))
+
+//前序遍历
+func preOrder(_ root:TreeNode?) {
+    guard root != nil else {
+        return
+    }
+    print(root!.val)
+    preOrder(root?.left)
+    preOrder(root?.right)
+}
+//中序遍历
+func inOrder(_ root:TreeNode?) {
+    guard root != nil else {
+        return
+    }
+    inOrder(root?.left)
+    print(root!.val)
+    inOrder(root?.right)
+}
+//后序遍历
+func postOrder(_ root:TreeNode?) {
+    guard root != nil else {
+        return
+    }
+    postOrder(root?.right)
+    postOrder(root?.left)
+    print(root!.val)
+}
+preOrder(nodes[0])
+
+
