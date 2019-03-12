@@ -28,8 +28,12 @@ func addDigits(_ num:Int) -> Int {
                 intial + (Int(String(element)) ?? 0)
             }
         }
+        
+    
         return temp
     }
+    
+    
     
     return recursionAdd(num)
 }
