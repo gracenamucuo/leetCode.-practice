@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5A4918CA223547B2007EA0D5 /* AddDigits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4918C9223547B2007EA0D5 /* AddDigits.swift */; };
 		5A9228E02233C6B1007BF80A /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9228DF2233C6B1007BF80A /* main.swift */; };
+		5AD4D88E2248771400060ADA /* BinarySearchTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD4D88D2248771400060ADA /* BinarySearchTree.swift */; };
+		5AD4D89022487B2D00060ADA /* BinaryTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD4D88F22487B2D00060ADA /* BinaryTree.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,6 +29,8 @@
 		5A4918C9223547B2007EA0D5 /* AddDigits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDigits.swift; sourceTree = "<group>"; };
 		5A9228DC2233C6B1007BF80A /* leetCodePractice */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = leetCodePractice; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A9228DF2233C6B1007BF80A /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		5AD4D88D2248771400060ADA /* BinarySearchTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinarySearchTree.swift; sourceTree = "<group>"; };
+		5AD4D88F22487B2D00060ADA /* BinaryTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryTree.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,8 @@
 			children = (
 				5A9228DF2233C6B1007BF80A /* main.swift */,
 				5A4918C9223547B2007EA0D5 /* AddDigits.swift */,
+				5AD4D88D2248771400060ADA /* BinarySearchTree.swift */,
+				5AD4D88F22487B2D00060ADA /* BinaryTree.swift */,
 			);
 			path = leetCodePractice;
 			sourceTree = "<group>";
@@ -122,8 +128,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AD4D89022487B2D00060ADA /* BinaryTree.swift in Sources */,
 				5A9228E02233C6B1007BF80A /* main.swift in Sources */,
 				5A4918CA223547B2007EA0D5 /* AddDigits.swift in Sources */,
+				5AD4D88E2248771400060ADA /* BinarySearchTree.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
