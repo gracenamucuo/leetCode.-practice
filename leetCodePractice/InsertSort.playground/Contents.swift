@@ -30,7 +30,7 @@ func insertSort2(_ array:[Int])->[Int]{
         var y = x
         let temp = a[y]///将要比较的值记下
         
-        while y > 0 && temp < a[y - 1] {
+        while y > 0 && temp < a[y - 1] {///一直用记下来的值与其他的值进行比较
             a[y] = a[y - 1]// 赋值相当于移位置 要比较的值已经记下来了。
             y -= 1
         }
