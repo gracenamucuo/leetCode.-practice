@@ -31,6 +31,7 @@
 		5A802C2324449C8C00C35A96 /* Queue.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Queue.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		5A802C24244601B900C35A96 /* InsertSort.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = InsertSort.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		5A802C252447371000C35A96 /* BinarySearch.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = BinarySearch.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		5A802C26244745DC00C35A96 /* BinarySearchTree.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = BinarySearchTree.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		5A9228DC2233C6B1007BF80A /* leetCodePractice */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = leetCodePractice; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A9228DF2233C6B1007BF80A /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		5AD4D88D2248771400060ADA /* BinarySearchTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinarySearchTree.swift; sourceTree = "<group>"; };
@@ -51,6 +52,7 @@
 		5A9228D32233C6B1007BF80A = {
 			isa = PBXGroup;
 			children = (
+				5A802C26244745DC00C35A96 /* BinarySearchTree.playground */,
 				5A802C252447371000C35A96 /* BinarySearch.playground */,
 				5A802C24244601B900C35A96 /* InsertSort.playground */,
 				5A802C2324449C8C00C35A96 /* Queue.playground */,
