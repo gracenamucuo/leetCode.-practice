@@ -26,6 +26,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3C303E682447FC1000880FEC /* Practice.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Practice.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		5A4918C9223547B2007EA0D5 /* AddDigits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDigits.swift; sourceTree = "<group>"; };
 		5A802C172444970A00C35A96 /* Stack.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Stack.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		5A802C2324449C8C00C35A96 /* Queue.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Queue.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -55,6 +56,7 @@
 				5A802C24244601B900C35A96 /* InsertSort.playground */,
 				5A802C2324449C8C00C35A96 /* Queue.playground */,
 				5A802C172444970A00C35A96 /* Stack.playground */,
+				3C303E682447FC1000880FEC /* Practice.playground */,
 				5A9228DE2233C6B1007BF80A /* leetCodePractice */,
 				5A9228DD2233C6B1007BF80A /* Products */,
 			);
