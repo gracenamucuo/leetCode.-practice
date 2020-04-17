@@ -47,3 +47,16 @@ func insetSort_genericity<T:Comparable>(_ array:[T],_ comeBeforeOrder:(_:T,_:T)-
 print(insetSort_genericity([3,-1,4,8,-2,-6,9,-5,0], >))
 
 
+func towSum(_ array:[Int],sum:Int)->[(Int,Int)]{
+    guard array.count > 0 else {
+        return []
+    }
+    let a = array
+    var result:[(Int,Int)] = []
+    
+    for value in 1..<a.count {
+        
+    }
+    
+    return []
+}
