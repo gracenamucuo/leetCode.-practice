@@ -68,3 +68,46 @@ func twoSum(_ array:[Int],sum:Int)->[(Int,Int)]{
 
 print(twoSum([0,7,2,4,7,8,9,5,1], sum: 9))
 
+///生命游戏
+
+func lifeGame(_ array:[[Int]])->[Int]{
+    guard array.count > 0 else {
+        return []
+    }
+    ///寻找8个位置
+    let a = array
+    let row = a.count
+    for r in 0..<a.count {
+        let inner_arr = a[r]
+        let col = inner_arr.count
+        for c in 0..<inner_arr.count {
+            //上
+            var up:Int? = nil
+            if r - 1 >= 0 {
+                up = a[r-1][c]
+            }
+            //左上
+            var left_up:Int? = nil
+            if r - 1 >= 0 && c - 1 >= 0 {
+                left_up = a[r - 1][c - 1]
+            }
+            //左
+            var left:Int? = nil
+            if c - 1 >= 0 {
+                left = inner_arr[c - 1]
+            }
+            //左下
+            
+            //下
+            //右下
+            //右
+            //右上
+        }
+    }
+    
+    //比较三个条件
+    
+    ///标记、重建
+    return []
+}
+
