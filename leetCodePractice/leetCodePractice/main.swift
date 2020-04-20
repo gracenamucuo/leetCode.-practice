@@ -119,4 +119,32 @@ func normalSpiral(_ array:[[Int]])->[Int]{
 //let matrix = [[1,3,4,6,9],[5,7,8,22,100],[10,12,15,19,200],[11,111,112,113,114]]
 let matrix = [[1,3,4],[5,7,8],[10,12,15],[11,111,112]]
 
-print(normalSpiral(matrix))
+//print(normalSpiral(matrix))
+
+func spiral(_ array:[[Int]],_ beginPoint:(Int,Int)) -> [Int] {
+    guard array.count > 0 else {
+        return []
+    }
+    
+    var row = array.count
+    var column = array.first!.count
+    guard beginPoint.0 < row && beginPoint.1 < column else {
+        return []
+    }
+    var a = array
+    var result:[Int] = Array()
+    var total:[Any] = Array()
+    var clockwise = true
+    
+    var r = beginPoint.0
+    var c = beginPoint.1
+    while result.count < a.count {
+        
+    }
+    
+    
+    
+    
+    return result
+    
+}
