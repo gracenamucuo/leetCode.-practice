@@ -92,4 +92,5 @@ func normalSpiral(_ array:[[Int]])->[Int]{
 let matrix = [[1,3,4,6,9],[5,7,8,22,100],[10,12,15,19,200],[11,111,112,113,114]]
 //let matrix = [[1,3,4],[5,7,8],[10,12,15],[11,111,112]]
 
-print(normalSpiral(matrix))
+//print(normalSpiral(matrix))
+
