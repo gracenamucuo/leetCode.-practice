@@ -60,51 +60,24 @@ func normalSpiral(_ array:[[Int]])->[Int]{
         }
         
         if clockwise {///走行
-            var endRight = false
-            var endLeft = false
             if (c + 1) < column && !flag.contains(generateCoordinate(r, c + 1)) {
                 c += 1
-
-//                endRight = (c + 1) == column
-//                endRight = endRight || ((c + 1) < column && flag.contains(generateCoordinate(r, c + 1)))
-            }
-            else if (c - 1) >= 0 && !flag.contains(generateCoordinate(r, c - 1)) {                            c -= 1
+            }else if (c - 1) >= 0 && !flag.contains(generateCoordinate(r, c - 1)) {                            c -= 1
                 
-//                endLeft = c  == 0
-//                endLeft =  endLeft || (c > 0 && flag.contains(generateCoordinate(r, c )))
             }else{
                 clockwise = false
             }
-            
-            ///列走到头了
-//            if endRight || endLeft {
-//                clockwise = false
-//            }
+
         }
         else{//走列
-            
-//            var endUp = false
-//            var endDown = false
             if (r - 1) >= 0 && !flag.contains(generateCoordinate(r - 1, c)) {///上
                 r -= 1
-                
-//                endDown = r == 0
-//                endDown = endDown || (r > 0 && flag.contains(generateCoordinate(r, c)))
-
             }
             else if (r + 1) < row && !flag.contains(generateCoordinate(r + 1, c)) {//下
                 r += 1
-                
-//                endUp = (r + 1) == row
-//                endUp = endUp || (r + 1 < row && flag.contains(generateCoordinate(r + 1, c)))
             }else{
                 clockwise = true
             }
-            
-//            //下 上到头
-//            if endUp || endDown {
-//                clockwise = true
-//            }
         }
         
         ///跳出循环
@@ -116,10 +89,11 @@ func normalSpiral(_ array:[[Int]])->[Int]{
     return result
 }
 
-//let matrix = [[1,3,4,6,9],[5,7,8,22,100],[10,12,15,19,200],[11,111,112,113,114]]
-let matrix = [[1,3,4],[5,7,8],[10,12,15],[11,111,112]]
+let matrix = [[1,3,4,6,9],[5,7,8,22,100],[10,12,15,19,200],[11,111,112,113,114]]
+//let matrix = [[1,3,4],[5,7,8],[10,12,15],[11,111,112]]
 
 //print(normalSpiral(matrix))
+
 
 func spiral(_ array:[[Int]],_ beginPoint:(Int,Int)) -> [Int] {
     guard array.count > 0 else {
