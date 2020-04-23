@@ -122,3 +122,40 @@ func spiral(_ array:[[Int]],_ beginPoint:(Int,Int)) -> [Int] {
     return result
     
 }
+
+func around(_ original:CGPoint,_ step:CGFloat) -> [CGPoint] {
+    /*
+     ///顺时针
+     
+     *   *   *
+     *   •   *
+     *   *   *
+     
+
+     */
+    var result:[CGPoint] = []
+    let x = original.x
+    let y = original.y
+    ///在初始位置的基础上
+    //右边 （x + step,y）
+    result.append(CGPoint(x: x + step, y: y))
+    //右下 (x + step,y - step)
+    result.append(CGPoint(x: x + step, y: y - step))
+    //下 （x,y- step）
+    result.append(CGPoint(x: x, y: y - step))
+    //左下 (x-step,y-step)
+    result.append(CGPoint(x: x - step, y: y - step))
+    //左 (x-step,y)
+    result.append(CGPoint(x: x - step, y: y))
+    //左上 (x-step,y+step)
+    result.append(CGPoint(x: x - step, y: y + step))
+    //上(x,y+step)
+    result.append(CGPoint(x: x, y: y + step))
+    //右上(x+step,y+step)
+    result.append(CGPoint(x: x + step, y: y + step))
+    return result
+}
+
+print("========周围八个点=========")
+print(around(CGPoint(x: 0, y: 0), 1))
+print("========周围八个点=========")
