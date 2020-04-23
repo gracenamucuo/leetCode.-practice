@@ -100,24 +100,101 @@ func spiral(_ array:[[Int]],_ beginPoint:(Int,Int)) -> [Int] {
         return []
     }
     
-    var row = array.count
-    var column = array.first!.count
+    let row = array.count
+    let column = array.first!.count
     guard beginPoint.0 < row && beginPoint.1 < column else {
         return []
     }
     let a = array
-    var result:[Int] = Array()
+    var result:[(Int,Int)] = Array()
     
     let r = beginPoint.0
     let c = beginPoint.1
     
     ///加入第一个
-    result.append(a[r][c])
     var step = 1
     let original = (r,c)
-    while result.count <= a.count {
-        around(&result, original, step, a)
+    result.append(original)
+    var temp:[Int] = Array()
+    var coordinate:[String] = Array()
+    coordinate.append(String(r) + "_" + String(c))
+    
+    
+    while temp.count < row * column {
+        ///上一个位置是错的 
+        let last_array = coordinate.last!.split(separator: "_")
+        let last_point = (Int(last_array[0]),Int(last_array[1]))
+        let last_p = (last_point.0!,last_point.1!)
+        let t = everyStep(step, a, last_p)
+
+        for (r,c) in t {
+            let point = String(r) + "_" + String(c)
+            if (r >= 0 && r < row) && (c >= 0 && c < column) && !coordinate.contains(point){
+                temp.append(a[r][c])
+                coordinate.append(point)
+            }
+        }
         step += 1
+    }
+    return temp
+    
+}
+
+func everyStep(_ step:Int,_ array:[[Int]],_ point:(Int,Int)) ->[(Int,Int)]{
+//    let row = array.count
+//    let column = array.first!.count
+    
+//    guard result.count > 0 else {
+//        return
+//    }
+    
+    var result:[(Int,Int)] = Array()
+    
+    var last = point
+    
+    if step % 2 == 0 {//偶数 先左后上
+        for i in 1...step {
+            ///左边走
+            let r = last.0
+            let c = last.1  - i
+//            if (r >= 0 && r < row) && (c >= 0 && c < column) {
+                result.append((r,c))
+//            }
+        }
+        
+        last = result.last!
+        
+        for i in 1...step {
+            let r = last.0 - i
+            let c = last.1
+//            if (r >= 0 && r < row) && (c >= 0 && c < column) {
+                result.append((r,c))
+//            }
+            
+        }
+        
+    }else{///奇数 先右后下
+     
+        for i in 1...step {
+            ///右边走
+            let r = last.0
+            let c = last.1 + i
+//            if (r >= 0 && r < row) && (c >= 0 && c < column) {
+                result.append((r,c))
+//            }
+        }
+        
+        last = result.last!
+        
+        //下
+        for i in 1...step {
+            let r = last.0 + i
+            let c = last.1
+//            if (r >= 0 && r < row) && (c >= 0 && c < column){
+                result.append((r,c))
+//            }
+            
+        }
     }
     return result
     

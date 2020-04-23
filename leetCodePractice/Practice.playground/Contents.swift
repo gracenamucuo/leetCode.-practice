@@ -178,6 +178,11 @@ print(normalSpiral(matrix))
 /*
  如"abc" 输出为：”a, b, c"  "a, c, b"  "b, a, c" "b, c, a" "c, a, b" "c, b, a"   20min
  */
-func fullPermutation() -> [String]{
-    result []
-}
+//func fullPermutation() -> [String]{
+//    result []
+//}
+
+let a = "1_2"
+let b = a.split(separator: "_")
+print(b)
+
