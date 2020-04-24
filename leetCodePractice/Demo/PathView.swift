@@ -23,8 +23,6 @@ class PathView: UIView {
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         addMatrix([[1,4,5,6,10],[7,8,11,22,23],[111,34,66,33,34],[-1,-2,-3,-4,-5]])
-
-//        test1()
     }
     
   

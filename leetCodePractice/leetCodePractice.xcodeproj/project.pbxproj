@@ -14,6 +14,7 @@
 		3C1D12C5244D30F50074C227 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C1D12C4244D30F50074C227 /* Assets.xcassets */; };
 		3C1D12C8244D30F50074C227 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C1D12C6244D30F50074C227 /* LaunchScreen.storyboard */; };
 		3C1D12CE244D32E70074C227 /* PathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1D12CD244D32E70074C227 /* PathView.swift */; };
+		3C4FC3F12452765A00B2E0E0 /* RadomSpiralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4FC3F02452765A00B2E0E0 /* RadomSpiralView.swift */; };
 		5A4918CA223547B2007EA0D5 /* AddDigits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4918C9223547B2007EA0D5 /* AddDigits.swift */; };
 		5A9228E02233C6B1007BF80A /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9228DF2233C6B1007BF80A /* main.swift */; };
 		5AD4D88E2248771400060ADA /* BinarySearchTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD4D88D2248771400060ADA /* BinarySearchTree.swift */; };
@@ -43,6 +44,7 @@
 		3C1D12C9244D30F50074C227 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C1D12CD244D32E70074C227 /* PathView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathView.swift; sourceTree = "<group>"; };
 		3C303E682447FC1000880FEC /* Practice.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Practice.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		3C4FC3F02452765A00B2E0E0 /* RadomSpiralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadomSpiralView.swift; sourceTree = "<group>"; };
 		5A4918C9223547B2007EA0D5 /* AddDigits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDigits.swift; sourceTree = "<group>"; };
 		5A802C172444970A00C35A96 /* Stack.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Stack.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		5A802C2324449C8C00C35A96 /* Queue.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Queue.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -84,6 +86,7 @@
 				3C1D12C6244D30F50074C227 /* LaunchScreen.storyboard */,
 				3C1D12C9244D30F50074C227 /* Info.plist */,
 				3C1D12CD244D32E70074C227 /* PathView.swift */,
+				3C4FC3F02452765A00B2E0E0 /* RadomSpiralView.swift */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 				3C1D12C0244D30F40074C227 /* ViewController.swift in Sources */,
 				3C1D12CE244D32E70074C227 /* PathView.swift in Sources */,
 				3C1D12BC244D30F40074C227 /* AppDelegate.swift in Sources */,
+				3C4FC3F12452765A00B2E0E0 /* RadomSpiralView.swift in Sources */,
 				3C1D12BE244D30F40074C227 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
