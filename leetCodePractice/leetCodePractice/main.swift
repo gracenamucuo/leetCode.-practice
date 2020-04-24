@@ -106,60 +106,47 @@ func spiral(_ array:[[Int]],_ beginPoint:(Int,Int)) -> [Int] {
         return []
     }
     let a = array
-    var result:[(Int,Int)] = Array()
+    var totalArray:[(Int,Int)] = Array()
     
     let r = beginPoint.0
     let c = beginPoint.1
     
     ///加入第一个
     var step = 1
-    let original = (r,c)
-    result.append(original)
-    var temp:[Int] = Array()
-    var coordinate:[String] = Array()
-    coordinate.append(String(r) + "_" + String(c))
+    totalArray.append(beginPoint)
     
-    
-    while temp.count < row * column {
-        ///上一个位置是错的 
-        let last_array = coordinate.last!.split(separator: "_")
-        let last_point = (Int(last_array[0]),Int(last_array[1]))
-        let last_p = (last_point.0!,last_point.1!)
-        let t = everyStep(step, a, last_p)
-
+    var result:[Int] = Array()
+    result.append(a[r][c])
+    while result.count < row * column {
+        let t = everyStep(step, a, &totalArray)
         for (r,c) in t {
-            let point = String(r) + "_" + String(c)
-            if (r >= 0 && r < row) && (c >= 0 && c < column) && !coordinate.contains(point){
-                temp.append(a[r][c])
-                coordinate.append(point)
+            if (r >= 0 && r < row) && (c >= 0 && c < column){
+                result.append(a[r][c])
             }
         }
         step += 1
     }
-    return temp
+    return result
     
 }
 
-func everyStep(_ step:Int,_ array:[[Int]],_ point:(Int,Int)) ->[(Int,Int)]{
-//    let row = array.count
-//    let column = array.first!.count
+func everyStep(_ step:Int,_ array:[[Int]],_ total:inout [(Int,Int)])->[(Int,Int)]{
     
-//    guard result.count > 0 else {
-//        return
-//    }
+    guard total.count > 0 else {
+        return []
+    }
     
     var result:[(Int,Int)] = Array()
     
-    var last = point
+    var last = total.last!
+    
     
     if step % 2 == 0 {//偶数 先左后上
         for i in 1...step {
             ///左边走
             let r = last.0
             let c = last.1  - i
-//            if (r >= 0 && r < row) && (c >= 0 && c < column) {
-                result.append((r,c))
-//            }
+            result.append((r,c))
         }
         
         last = result.last!
@@ -167,9 +154,7 @@ func everyStep(_ step:Int,_ array:[[Int]],_ point:(Int,Int)) ->[(Int,Int)]{
         for i in 1...step {
             let r = last.0 - i
             let c = last.1
-//            if (r >= 0 && r < row) && (c >= 0 && c < column) {
-                result.append((r,c))
-//            }
+            result.append((r,c))
             
         }
         
@@ -179,9 +164,7 @@ func everyStep(_ step:Int,_ array:[[Int]],_ point:(Int,Int)) ->[(Int,Int)]{
             ///右边走
             let r = last.0
             let c = last.1 + i
-//            if (r >= 0 && r < row) && (c >= 0 && c < column) {
-                result.append((r,c))
-//            }
+            result.append((r,c))
         }
         
         last = result.last!
@@ -190,74 +173,19 @@ func everyStep(_ step:Int,_ array:[[Int]],_ point:(Int,Int)) ->[(Int,Int)]{
         for i in 1...step {
             let r = last.0 + i
             let c = last.1
-//            if (r >= 0 && r < row) && (c >= 0 && c < column){
-                result.append((r,c))
-//            }
+            result.append((r,c))
             
         }
     }
+    
+    total.append(contentsOf: result)
     return result
     
 }
 
-func around(_ result:inout [Int], _ original:(Int,Int),_ step:Int,_ array:[[Int]]){
-    /*
-     ///顺时针
-     
-     *   *   *
-     *   •   *
-     *   *   *
-     
-
-     */
-    
-    let row = array.count
-    let column = array.first!.count
-    
-    func tempAdd(_ turple:(Int,Int)){
-        if (turple.0 < row && turple.0 >= 0) && (turple.1 < column && turple.1 >= 0) {
-            result.append(array[turple.0][turple.1])
-        }
-    }
-    
-    let x = original.0
-    let y = original.1
-    ///在初始位置的基础上
-    //右边 （x + step,y）
-    var tempTurple = (x: x + step, y: y)
-    tempAdd(tempTurple)
-        
-    //右下 (x + step,y - step)
-    tempTurple = (x:x+step,y-step)
-    tempAdd(tempTurple)
-    
-    //下 （x,y- step）
-    tempTurple = (x:x,y-step)
-    tempAdd(tempTurple)
-    
-    //左下 (x-step,y-step)
-    tempTurple = (x:x - step,y:y - step)
-    tempAdd(tempTurple)
-    
-    //左 (x-step,y)
-    tempTurple = (x:x-step,y:y)
-    tempAdd(tempTurple)
-    
-    //左上 (x-step,y+step)
-    tempTurple = (x-step,y+step)
-    tempAdd(tempTurple)
-    
-    //上(x,y+step)
-    tempTurple = (x,y + step)
-    tempAdd(tempTurple)
-    
-    //右上(x+step,y+step)
-    tempTurple = (x + step,y + step)
-    tempAdd(tempTurple)
-}
 
 print("========周围八个点=========")
 
-print(spiral([[1,3,7],[2,4,6],[8,9,5]], (0,2)))
+print(spiral([[1,3,7,5]], (0,1)))
 
 print("========周围八个点=========")
