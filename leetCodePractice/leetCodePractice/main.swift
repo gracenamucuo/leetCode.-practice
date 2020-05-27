@@ -108,8 +108,63 @@ func spiral(_ array:[[Int]],_ beginPoint:(Int,Int)) -> [Int] {
     let a = array
     var totalArray:[(Int,Int)] = Array()
     
+    
     let r = beginPoint.0
     let c = beginPoint.1
+
+    
+    func everyStep(_ step:Int,_ array:[[Int]],_ total:inout [(Int,Int)])->[(Int,Int)]{
+        
+        guard total.count > 0 else {
+            return []
+        }
+        
+        var result:[(Int,Int)] = Array()
+        
+        var last = total.last!
+        
+        
+        if step % 2 == 0 {//偶数 先左后上
+            for i in 1...step {
+                ///左边走
+                let r = last.0
+                let c = last.1  - i
+                result.append((r,c))
+            }
+            
+            last = result.last!
+            
+            for i in 1...step {
+                let r = last.0 - i
+                let c = last.1
+                result.append((r,c))
+                
+            }
+            
+        }else{///奇数 先右后下
+         
+            for i in 1...step {
+                ///右边走
+                let r = last.0
+                let c = last.1 + i
+                result.append((r,c))
+            }
+            
+            last = result.last!
+            
+            //下
+            for i in 1...step {
+                let r = last.0 + i
+                let c = last.1
+                result.append((r,c))
+                
+            }
+        }
+        
+        total.append(contentsOf: result)
+        return result
+        
+    }
     
     ///加入第一个
     var step = 1
@@ -189,3 +244,83 @@ print("========周围八个点=========")
 print(spiral([[1,3,7,5]], (0,1)))
 
 print("========周围八个点=========")
+
+func spiralMatrixIII(_ R: Int, _ C: Int, _ r0: Int, _ c0: Int) -> [[Int]] {
+    var totalCoordinateArray:[[Int]] = Array()
+    var totalArray:[(Int,Int)] = Array()
+    totalArray.append((r0,c0))
+    
+    func convertToArrry(_ turple:(Int,Int))->[Int]{
+        var arr:[Int] = Array()
+        arr.append(turple.0)
+        arr.append(turple.1)
+        return arr
+    }
+    func everyStep(_ step:Int/*,_ array:[[Int]]*/,_ total:inout [(Int,Int)])->[(Int,Int)]{
+        
+        guard total.count > 0 else {
+            return []
+        }
+        
+        var result:[(Int,Int)] = Array()
+        
+        var last = total.last!
+        
+        
+        if step % 2 == 0 {//偶数 先左后上
+            for i in 1...step {
+                ///左边走
+                let r = last.0
+                let c = last.1  - i
+                result.append((r,c))
+            }
+            
+            last = result.last!
+            
+            for i in 1...step {
+                let r = last.0 - i
+                let c = last.1
+                result.append((r,c))
+            }
+            
+        }else{///奇数 先右后下
+            
+            for i in 1...step {
+                ///右边走
+                let r = last.0
+                let c = last.1 + i
+                result.append((r,c))
+            }
+            
+            last = result.last!
+            
+            //下
+            for i in 1...step {
+                let r = last.0 + i
+                let c = last.1
+                result.append((r,c))
+            }
+        }
+        
+        total.append(contentsOf: result)
+        return result
+    }
+    
+    totalCoordinateArray.append(convertToArrry((r0,c0)))
+    
+    var step = 1
+    while totalCoordinateArray.count < R * C {
+        let t = everyStep(step, &totalArray)
+        for (r,c) in t {
+            if (r >= 0 && r < R) && (c >= 0 && c < C){
+                // result.append(a[r][c])
+                totalCoordinateArray.append(convertToArrry((r,c)))
+            }
+        }
+        step += 1
+    }
+    return totalCoordinateArray
+
+}
+
+print(spiralMatrixIII(1,4,0,1))
