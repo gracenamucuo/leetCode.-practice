@@ -25,11 +25,10 @@ public struct Stack<T>{
 
 }
 
-var stack = Stack<Any>()
-stack.push(1)
-stack.push("124")
-stack.push(2)
-print(stack)
+//var stack: Stack<Int> = Stack<Any>()
+//stack.push(1)
+//stack.push("124")
+//stack.push(2)
 
 extension Stack:Sequence{
     public func makeIterator() -> AnyIterator<T> {
@@ -39,5 +38,38 @@ extension Stack:Sequence{
         }
     }
 }
+
+var s0 = Stack<Int>()
+
+  s0.push(1)
+  s0.push(2)
+  s0.push(3)
+  s0.push(4)
+  s0.push(5)
+  print(s0)
+
+  func stackReverse(stack:inout Stack<Int>){
+      if stack.isEmpty {
+          return
+      }
+      let temp = removeTail(stack: &stack)
+        print(String(temp) + "temp")
+      stackReverse(stack: &stack)
+      stack.push(temp)
+  }
+
+  func removeTail(stack:inout Stack<Int>) -> Int{
+      let result = stack.pop()
+      if stack.isEmpty {
+        return result!
+      }
+      let tail = removeTail(stack: &stack)
+      stack.push(result!)
+      print(String(tail) + "tail")
+      return tail
+  }
+
+  stackReverse(stack: &s0)
+  print(s0)
 
 
